@@ -21,7 +21,7 @@ from utils.utils import AverageMeter         as AverageMeter
 from utils.utils import draw_paint           as draw_paint
 from utils       import evaluate             as evaluate
 from utils.utils import get_kpts             as get_kpts
-from utils.utils import save_detection       as save_detection
+#from utils.utils import save_detection       as save_detection
 
 from model.video_unipose import unipose
 

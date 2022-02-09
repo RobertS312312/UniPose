@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-from utils       import lsp_lspet_data       as lsp_lspet_data
+#from utils       import lsp_lspet_data       as lsp_lspet_data
 from utils       import mpii_data            as mpii_data
 from utils       import mpii_data            as Mpii
 # from utils       import coco_data            as coco_data
