@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from model.modules.waspVideo import build_wasp
-from model.modules.decoder import build_decoder
-from model.modules.backbone import build_backbone
+from modules.waspVideo import build_wasp
+from modules.decoder import build_decoder
+from modules.backbone import build_backbone
 
 
 class LSTM_0(nn.Module):
