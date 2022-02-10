@@ -93,9 +93,9 @@ class Trainer(object):
         self.bestPCK  = 0
         self.bestPCKh = 0
 
-    # Print model summary and metrics
-    dump_input = torch.rand([1, 3, 368, 368]) #guessing correction to typo. previously had torch.rand(1, 3, 368, 368]))
-    print(get_model_summary(self.modelmodel, dump_input))
+        # Print model summary and metrics
+        dump_input = torch.rand([1, 3, 368, 368]) #guessing correction to typo. previously had torch.rand(1, 3, 368, 368]))
+        print(get_model_summary(self.modelmodel, dump_input))
 
     def training(self, epoch):
         train_loss = 0.0

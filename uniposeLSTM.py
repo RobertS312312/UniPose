@@ -23,7 +23,7 @@ from utils       import evaluate             as evaluate
 from utils.utils import get_kpts             as get_kpts
 #from utils.utils import save_detection       as save_detection
 
-from model.video_unipose import unipose
+from model.uniposeLSTM import unipose
 
 from tqdm import tqdm
 
@@ -60,7 +60,7 @@ class Trainer(object):
         if self.dataset   ==  "Penn_Action":
             self.numClasses  = 13
 
-        self.train_loader, self.val_loader = getDataloader(self.dataset, self.train_dir, self.val_dir, self.sigma, self.stride, self.workers, self.frame_memory)
+        self.train_loader, self.val_loader, self.fake_test_loader = getDataloader(self.dataset, self.train_dir, self.val_dir, "",self.sigma, self.stride, self.workers, self.frame_memory)
 
         model = unipose(num_classes=self.numClasses,backbone='resnet',output_stride=16,sync_bn=True,freeze_bn=False, stride=self.stride)
 
