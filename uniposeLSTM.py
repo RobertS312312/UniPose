@@ -33,7 +33,10 @@ from torchsummary import summary
 
 from PIL import Image
 
-
+PENN_ACTION_TRAIN_PATH = r"C:\Users\rober\OneDrive\Documents\GitHub\UniPose\data\Penn_Action_Train/"
+PENN_ACTION_VAL_PATH = r"C:\Users\rober\OneDrive\Documents\GitHub\UniPose\data\Penn_Action_Val/"
+TEST_IMAGE_PATH = r"C:\Users\rober\OneDrive\Documents\GitHub\UniPose\data\Penn_Action_Test/"
+DATASET = "Penn_Action"
 
 class Trainer(object):
     def __init__(self, args):
@@ -220,7 +223,7 @@ class Trainer(object):
         self.model.eval()
         print("Testing") 
         
-        img_path = '/PATH/TO/TEST/IMAGE'
+        img_path = TEST_IMAGE_PATH#'/PATH/TO/TEST/IMAGE'
         center   = [184, 184]
 
         img  = np.array(cv2.resize(cv2.imread(img_path),(368,368)), dtype=np.float32)
@@ -286,13 +289,13 @@ args = parser.parse_args()
 
 args.model_arch = 'unipose'
 
-args.dataset    = 'Penn_Action'
+args.dataset    = DATASET
 
 args.frame_memory = 5
 
 if args.dataset == 'Penn_Action':
-    args.train_dir  = '/PATH/TO/Penn_Action/TRAIN'
-    args.val_dir    = '/PATH/TO/Penn_Action/VAL'
+    args.train_dir  = PENN_ACTION_TRAIN_PATH #'/PATH/TO/Penn_Action/TRAIN'
+    args.val_dir    = PENN_ACTION_VAL_PATH #'/PATH/TO/Penn_Action/VAL'
 
 
 trainer = Trainer(args)
